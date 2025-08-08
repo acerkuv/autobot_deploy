@@ -1,0 +1,7 @@
+IMPORT | FAIL | BTC/USDT | 3m | Exception: name 'candles_' is not defined
+IMPORT | FAIL | BTC/USDT | 3m | Exception: name 'candles_' is not defined
+IMPORT | FAIL | BTC/USDT | 3m | Exception: name 'candles_' is not defined
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-04 14:13:57–2025-08-04 16:13:57 | 140 candles (fetched)
+💾 Сохранено в Parquet: 3102 свечей в /app/data/processed/btc_usdt_3m.parquet
+💾 Сохранено в Redis: 3102 свечей в BTC-USDT:3m
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-04 13:52:46–2025-08-04 15:52:46 | 3102 candles (fetched)

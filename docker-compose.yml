@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: okx-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A celery_app worker --loglevel=info
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A celery_app beat --loglevel=info
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  fetcher-btc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    command: python fetcher/main.py
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  bot-btc-long:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    command: python bot/main.py
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  smart-fetcher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python fetcher/smart_fetcher.py
+    env_file: .env
+    volumes:
+      - ././data:/app/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  redis_:
+    name: okx_redis_data

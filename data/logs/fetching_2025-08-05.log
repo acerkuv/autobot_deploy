@@ -1,0 +1,20 @@
+💾 Сохранено в Parquet: 3118 свечей в /app/data/processed/btc_usdt_3m.parquet
+💾 Сохранено в Redis: 3118 свечей в BTC-USDT:3m
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 10:19:50–2025-08-05 12:19:50 | 3118 candles (fetched)
+💾 Сохранено в Redis: 5 свечей в BTC-USDT:3m
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 10:34:51–2025-08-05 12:34:51 | 5 candles (cached-parquet)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 10:46:30–2025-08-05 12:46:30 | 5 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 11:02:56–2025-08-05 13:02:56 | 5 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 11:48:08–2025-08-05 13:48:08 | 5 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 11:54:10–2025-08-05 13:54:10 | 5 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 12:05:30–2025-08-05 14:05:30 | 5 candles (cached-redis)
+💾 Сохранено в Redis: 39 свечей в BTC-USDT:3m
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 12:16:58–2025-08-05 14:16:58 | 39 candles (cached-parquet)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 12:19:32–2025-08-05 14:19:32 | 39 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 12:25:59–2025-08-05 14:25:59 | 38 candles (cached-redis)
+💾 Сохранено в Redis: 6 свечей в BTC-USDT:3m
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 14:22:59–2025-08-05 14:37:59 | 6 candles (cached-parquet)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 14:25:57–2025-08-05 14:40:57 | 5 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 14:28:57–2025-08-05 14:43:57 | 4 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 14:31:57–2025-08-05 14:46:57 | 3 candles (cached-redis)
+IMPORT | SUCCESS | BTC/USDT | 3m | 2025-08-05 14:34:57–2025-08-05 14:49:57 | 2 candles (cached-redis)

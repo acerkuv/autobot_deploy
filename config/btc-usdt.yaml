@@ -1,0 +1,13 @@
+pair: BTC-USDT
+timeframes:
+  - 3m
+  - 1h
+risk:
+  max_position_size: 0.1
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+features:
+  - rsi
+  - macd
+  - volume
+  - bollinger_bands
