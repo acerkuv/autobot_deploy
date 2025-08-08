@@ -3,6 +3,8 @@ from celery import Celery
 from datetime import datetime, timedelta
 from ml.retrain import retrain_model
 import time
+import tasks
+from tasks import retrain_model_task
 
 # ✅ Убедись, что Redis доступен по имени сервиса
 app = Celery(

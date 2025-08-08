@@ -54,3 +54,4 @@ pandas
 pyarrow  # для Parquet
 celery[redis]
 redis
+ccxt

@@ -1,5 +1,6 @@
 # celery.py
 from celery import Celery
+from tasks import retrain_model_task
 
 app = Celery(
     'tasks',

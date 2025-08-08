@@ -16,5 +16,6 @@ COPY bot/ ./bot/
 COPY ml/ ./ml/
 COPY shared/ ./shared/
 COPY data/ ./data/
+COPY models/ ./models
 
-CMD ["python", "fetcher/main.py"]
+CMD ["celery", "-A", "celery_app", "worker", "-l", "INFO"]
