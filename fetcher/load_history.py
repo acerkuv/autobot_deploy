@@ -5,7 +5,7 @@ import time
 from datetime import datetime, timedelta
 import os
 
-def fetch_binance_candles(symbol, timeframe, days_back=45):
+def fetch_binance_candles(symbol, timeframe, days_back=200):
     """
     Загружает исторические свечи с Binance через ccxt.
     """
@@ -14,7 +14,7 @@ def fetch_binance_candles(symbol, timeframe, days_back=45):
         'options': {'defaultType': 'spot'}
     })
 
-    # ✅ Правильно вычисляем timestamp 45 дней назад
+    # ✅ Правильно вычисляем timestamp 200 дней назад
     since_date = datetime.utcnow() - timedelta(days=days_back)
     since = exchange.parse8601(since_date.strftime("%Y-%m-%dT%H:%M:%S.%fZ"))
     end_time = exchange.milliseconds()
@@ -63,8 +63,8 @@ def save_to_parquet(df, filepath):
 
 if __name__ == "__main__":
     SYMBOL = "BTC/USDT"
-    TIMEFRAMES = ["3m", "1h"]
-    DAYS_BACK = 45
+    TIMEFRAMES = ["15m", "1h", "4h"]
+    DAYS_BACK = 200
 
     for tf in TIMEFRAMES:
         df = fetch_binance_candles(SYMBOL, tf, DAYS_BACK)
