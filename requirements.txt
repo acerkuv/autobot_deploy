@@ -55,3 +55,4 @@ pyarrow  # для Parquet
 celery[redis]
 redis
 ccxt
+tensorflow
